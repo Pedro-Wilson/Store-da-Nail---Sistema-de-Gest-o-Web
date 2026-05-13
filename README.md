@@ -20,4 +20,4 @@ Abaixo estão listados os membros responsáveis pelo desenvolvimento do projeto 
 | :--- | :--- |
 | Pedro Wilson Coelho Parreira | [@pedro-wilson](https://github.com/Pedro-Wilson) |
 | Ricardo Moiseis Nunes Almeida | [@ricardo-moiseis](https://github.com/ricardo-moiseis) |
-| Melk Ineude Sousa Oliveira | [@melk-ineude]([https://github.com/melk-ineude](https://github.com/melsousa-o) |
+| Melk Ineude Sousa Oliveira | [@melk-ineude](https://github.com/melsousa-o) |
