@@ -4,7 +4,7 @@
     "express": "^5.2.1",
     "pg": "^8.21.0"
   },
-  "name": "store-new-teste-",
+  "name": "Store-da-Nail---Sistema-de-Gest-o-Web",
   "version": "1.0.0",
   "description": "Sistema de Gestão Web (Estoque e Vendas) utilizando arquitetura em camadas e boas práticas de ES. Projeto focado na digitalização dos processos da Store da Nail (UFC).",
   "main": "index.js",
@@ -16,14 +16,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Ricardolg11/Store-new-teste-.git"
+    "url": "git+https://github.com/Pedro-Wilson/Store-da-Nail---Sistema-de-Gest-o-Web.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "commonjs",
   "bugs": {
-    "url": "https://github.com/Ricardolg11/Store-new-teste-/issues"
+    "url": "https://github.com/Pedro-Wilson/Store-da-Nail---Sistema-de-Gest-o-Web/issues"
   },
-  "homepage": "https://github.com/Ricardolg11/Store-new-teste-#readme"
+  "homepage": "https://github.com/Pedro-Wilson/Store-da-Nail---Sistema-de-Gest-o-Web#readme"
 }
