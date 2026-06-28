@@ -2,10 +2,12 @@
 -- PostgreSQL database dump
 --
 
-\restrict 8v8khu7uGx1ED1GoyejQD7UOvuX75z2abuo4GJ60V5XhGluE0dfDgwYrV7H7ORG
+\restrict QofAcJZR1gVdyNjPQUoZIqaSuB4pdLyt6CyEZyMHZBsdhyjSnLVoEwMg6HvcTfT
 
--- Dumped from database version 17.10 (Debian 17.10-0+deb13u1)
--- Dumped by pg_dump version 17.10 (Debian 17.10-0+deb13u1)
+-- Dumped from database version 18.4 (Ubuntu 18.4-0ubuntu0.26.04.1)
+-- Dumped by pg_dump version 18.4 (Ubuntu 18.4-0ubuntu0.26.04.1)
+
+-- Started on 2026-06-28 15:59:43 -03
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -24,7 +26,8 @@ SET default_tablespace = '';
 SET default_table_access_method = heap;
 
 --
--- Name: tb_lote; Type: TABLE; Schema: public; Owner: postgres
+-- TOC entry 219 (class 1259 OID 16391)
+-- Name: tb_lote; Type: TABLE; Schema: public; Owner: pedro
 --
 
 CREATE TABLE public.tb_lote (
@@ -35,10 +38,11 @@ CREATE TABLE public.tb_lote (
 );
 
 
-ALTER TABLE public.tb_lote OWNER TO postgres;
+ALTER TABLE public.tb_lote OWNER TO pedro;
 
 --
--- Name: tb_lote_cod_lote_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+-- TOC entry 220 (class 1259 OID 16397)
+-- Name: tb_lote_cod_lote_seq; Type: SEQUENCE; Schema: public; Owner: pedro
 --
 
 CREATE SEQUENCE public.tb_lote_cod_lote_seq
@@ -50,17 +54,20 @@ CREATE SEQUENCE public.tb_lote_cod_lote_seq
     CACHE 1;
 
 
-ALTER SEQUENCE public.tb_lote_cod_lote_seq OWNER TO postgres;
+ALTER SEQUENCE public.tb_lote_cod_lote_seq OWNER TO pedro;
 
 --
--- Name: tb_lote_cod_lote_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+-- TOC entry 3531 (class 0 OID 0)
+-- Dependencies: 220
+-- Name: tb_lote_cod_lote_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: pedro
 --
 
 ALTER SEQUENCE public.tb_lote_cod_lote_seq OWNED BY public.tb_lote.cod_lote;
 
 
 --
--- Name: tb_movimentacao; Type: TABLE; Schema: public; Owner: postgres
+-- TOC entry 221 (class 1259 OID 16398)
+-- Name: tb_movimentacao; Type: TABLE; Schema: public; Owner: pedro
 --
 
 CREATE TABLE public.tb_movimentacao (
@@ -74,10 +81,11 @@ CREATE TABLE public.tb_movimentacao (
 );
 
 
-ALTER TABLE public.tb_movimentacao OWNER TO postgres;
+ALTER TABLE public.tb_movimentacao OWNER TO pedro;
 
 --
--- Name: tb_movimentacao_cod_mov_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+-- TOC entry 222 (class 1259 OID 16405)
+-- Name: tb_movimentacao_cod_mov_seq; Type: SEQUENCE; Schema: public; Owner: pedro
 --
 
 CREATE SEQUENCE public.tb_movimentacao_cod_mov_seq
@@ -89,17 +97,20 @@ CREATE SEQUENCE public.tb_movimentacao_cod_mov_seq
     CACHE 1;
 
 
-ALTER SEQUENCE public.tb_movimentacao_cod_mov_seq OWNER TO postgres;
+ALTER SEQUENCE public.tb_movimentacao_cod_mov_seq OWNER TO pedro;
 
 --
--- Name: tb_movimentacao_cod_mov_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+-- TOC entry 3532 (class 0 OID 0)
+-- Dependencies: 222
+-- Name: tb_movimentacao_cod_mov_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: pedro
 --
 
 ALTER SEQUENCE public.tb_movimentacao_cod_mov_seq OWNED BY public.tb_movimentacao.cod_mov;
 
 
 --
--- Name: tb_produto; Type: TABLE; Schema: public; Owner: postgres
+-- TOC entry 223 (class 1259 OID 16406)
+-- Name: tb_produto; Type: TABLE; Schema: public; Owner: pedro
 --
 
 CREATE TABLE public.tb_produto (
@@ -109,14 +120,17 @@ CREATE TABLE public.tb_produto (
     preco_custo numeric(10,2) DEFAULT 0.00,
     vch_categoria character varying(50),
     preco_venda numeric(10,2) DEFAULT 0.00,
-    imagem_url character varying(500)
+    imagem_url character varying(500),
+    num_venda numeric(10,2) DEFAULT 0,
+    num_quantidade integer DEFAULT 0
 );
 
 
-ALTER TABLE public.tb_produto OWNER TO postgres;
+ALTER TABLE public.tb_produto OWNER TO pedro;
 
 --
--- Name: tb_produto_cod_produto_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+-- TOC entry 224 (class 1259 OID 16415)
+-- Name: tb_produto_cod_produto_seq; Type: SEQUENCE; Schema: public; Owner: pedro
 --
 
 CREATE SEQUENCE public.tb_produto_cod_produto_seq
@@ -128,17 +142,20 @@ CREATE SEQUENCE public.tb_produto_cod_produto_seq
     CACHE 1;
 
 
-ALTER SEQUENCE public.tb_produto_cod_produto_seq OWNER TO postgres;
+ALTER SEQUENCE public.tb_produto_cod_produto_seq OWNER TO pedro;
 
 --
--- Name: tb_produto_cod_produto_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+-- TOC entry 3533 (class 0 OID 0)
+-- Dependencies: 224
+-- Name: tb_produto_cod_produto_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: pedro
 --
 
 ALTER SEQUENCE public.tb_produto_cod_produto_seq OWNED BY public.tb_produto.cod_produto;
 
 
 --
--- Name: tb_usuario; Type: TABLE; Schema: public; Owner: postgres
+-- TOC entry 225 (class 1259 OID 16416)
+-- Name: tb_usuario; Type: TABLE; Schema: public; Owner: pedro
 --
 
 CREATE TABLE public.tb_usuario (
@@ -148,10 +165,11 @@ CREATE TABLE public.tb_usuario (
 );
 
 
-ALTER TABLE public.tb_usuario OWNER TO postgres;
+ALTER TABLE public.tb_usuario OWNER TO pedro;
 
 --
--- Name: tb_usuario_cod_usuario_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+-- TOC entry 226 (class 1259 OID 16422)
+-- Name: tb_usuario_cod_usuario_seq; Type: SEQUENCE; Schema: public; Owner: pedro
 --
 
 CREATE SEQUENCE public.tb_usuario_cod_usuario_seq
@@ -163,45 +181,53 @@ CREATE SEQUENCE public.tb_usuario_cod_usuario_seq
     CACHE 1;
 
 
-ALTER SEQUENCE public.tb_usuario_cod_usuario_seq OWNER TO postgres;
+ALTER SEQUENCE public.tb_usuario_cod_usuario_seq OWNER TO pedro;
 
 --
--- Name: tb_usuario_cod_usuario_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+-- TOC entry 3534 (class 0 OID 0)
+-- Dependencies: 226
+-- Name: tb_usuario_cod_usuario_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: pedro
 --
 
 ALTER SEQUENCE public.tb_usuario_cod_usuario_seq OWNED BY public.tb_usuario.cod_usuario;
 
 
 --
--- Name: tb_lote cod_lote; Type: DEFAULT; Schema: public; Owner: postgres
+-- TOC entry 3343 (class 2604 OID 16423)
+-- Name: tb_lote cod_lote; Type: DEFAULT; Schema: public; Owner: pedro
 --
 
 ALTER TABLE ONLY public.tb_lote ALTER COLUMN cod_lote SET DEFAULT nextval('public.tb_lote_cod_lote_seq'::regclass);
 
 
 --
--- Name: tb_movimentacao cod_mov; Type: DEFAULT; Schema: public; Owner: postgres
+-- TOC entry 3345 (class 2604 OID 16424)
+-- Name: tb_movimentacao cod_mov; Type: DEFAULT; Schema: public; Owner: pedro
 --
 
 ALTER TABLE ONLY public.tb_movimentacao ALTER COLUMN cod_mov SET DEFAULT nextval('public.tb_movimentacao_cod_mov_seq'::regclass);
 
 
 --
--- Name: tb_produto cod_produto; Type: DEFAULT; Schema: public; Owner: postgres
+-- TOC entry 3347 (class 2604 OID 16425)
+-- Name: tb_produto cod_produto; Type: DEFAULT; Schema: public; Owner: pedro
 --
 
 ALTER TABLE ONLY public.tb_produto ALTER COLUMN cod_produto SET DEFAULT nextval('public.tb_produto_cod_produto_seq'::regclass);
 
 
 --
--- Name: tb_usuario cod_usuario; Type: DEFAULT; Schema: public; Owner: postgres
+-- TOC entry 3352 (class 2604 OID 16426)
+-- Name: tb_usuario cod_usuario; Type: DEFAULT; Schema: public; Owner: pedro
 --
 
 ALTER TABLE ONLY public.tb_usuario ALTER COLUMN cod_usuario SET DEFAULT nextval('public.tb_usuario_cod_usuario_seq'::regclass);
 
 
 --
--- Data for Name: tb_lote; Type: TABLE DATA; Schema: public; Owner: postgres
+-- TOC entry 3518 (class 0 OID 16391)
+-- Dependencies: 219
+-- Data for Name: tb_lote; Type: TABLE DATA; Schema: public; Owner: pedro
 --
 
 COPY public.tb_lote (cod_lote, cod_produto, dat_validade, int_quantidade) FROM stdin;
@@ -334,7 +360,9 @@ COPY public.tb_lote (cod_lote, cod_produto, dat_validade, int_quantidade) FROM s
 
 
 --
--- Data for Name: tb_movimentacao; Type: TABLE DATA; Schema: public; Owner: postgres
+-- TOC entry 3520 (class 0 OID 16398)
+-- Dependencies: 221
+-- Data for Name: tb_movimentacao; Type: TABLE DATA; Schema: public; Owner: pedro
 --
 
 COPY public.tb_movimentacao (cod_mov, cod_produto, chr_tipo, dat_mov, int_qtd, vch_motivo) FROM stdin;
@@ -692,115 +720,119 @@ COPY public.tb_movimentacao (cod_mov, cod_produto, chr_tipo, dat_mov, int_qtd, v
 
 
 --
--- Data for Name: tb_produto; Type: TABLE DATA; Schema: public; Owner: postgres
+-- TOC entry 3522 (class 0 OID 16406)
+-- Dependencies: 223
+-- Data for Name: tb_produto; Type: TABLE DATA; Schema: public; Owner: pedro
 --
 
-COPY public.tb_produto (cod_produto, vch_nome, vch_marca, preco_custo, vch_categoria, preco_venda, imagem_url) FROM stdin;
-1	Chronos Premium 50ml	Natura	25.30	Skincare	36.69	\N
-2	Q10 Intense 51ml	Nivea	36.00	Skincare	52.20	\N
-3	Revitalift Matte 52ml	Loréal Paris	46.70	Skincare	67.72	\N
-4	Renew Glow 53ml	Avon	57.40	Skincare	83.23	\N
-5	Pink Repair 54ml	Granado	68.10	Skincare	98.74	\N
-6	Chronos Fresh 55ml	Natura	61.80	Skincare	89.61	\N
-7	Q10 Soft 56ml	Nivea	72.50	Skincare	105.12	\N
-8	Revitalift Expert 57ml	Loréal Paris	83.20	Skincare	120.64	\N
-9	Renew Pro 58ml	Avon	93.90	Skincare	136.16	\N
-10	Pink Classic 59ml	Granado	104.60	Skincare	151.67	\N
-11	Chronos Premium 60ml	Natura	98.30	Skincare	142.53	\N
-12	Q10 Intense 61ml	Nivea	109.00	Skincare	158.05	\N
-13	Revitalift Matte 62ml	Loréal Paris	119.70	Skincare	173.56	\N
-14	Renew Glow 63ml	Avon	130.40	Skincare	189.08	\N
-15	Pink Repair 64ml	Granado	31.60	Skincare	45.82	\N
-16	Chronos Fresh 65ml	Natura	25.30	Skincare	36.69	\N
-17	Q10 Soft 66ml	Nivea	36.00	Skincare	52.20	\N
-18	Glam Premium 50ml	Eudora	39.90	Maquiagem	57.85	\N
-19	Base Intense 51ml	Vult	50.60	Maquiagem	73.37	\N
-20	Ultra Matte 52ml	Dailus	61.30	Maquiagem	88.88	\N
-21	Fit Me Glow 53ml	Maybelline	72.00	Maquiagem	104.40	\N
-22	Feels Repair 54ml	Ruby Rose	82.70	Maquiagem	119.92	\N
-23	Glam Fresh 55ml	Eudora	76.40	Maquiagem	110.78	\N
-24	Base Soft 56ml	Vult	87.10	Maquiagem	126.29	\N
-25	Ultra Expert 57ml	Dailus	97.80	Maquiagem	141.81	\N
-26	Fit Me Pro 58ml	Maybelline	108.50	Maquiagem	157.32	\N
-27	Feels Classic 59ml	Ruby Rose	119.20	Maquiagem	172.84	\N
-28	Glam Premium 60ml	Eudora	112.90	Maquiagem	163.71	\N
-29	Base Intense 61ml	Vult	123.60	Maquiagem	179.22	\N
-30	Ultra Matte 62ml	Dailus	24.80	Maquiagem	35.96	\N
-31	Fit Me Glow 63ml	Maybelline	35.50	Maquiagem	51.48	\N
-32	Feels Repair 64ml	Ruby Rose	46.20	Maquiagem	66.99	\N
-33	Glam Fresh 65ml	Eudora	39.90	Maquiagem	57.85	\N
-34	Base Soft 66ml	Vult	50.60	Maquiagem	73.37	\N
-35	Floratta Premium 50ml	O Boticário	54.50	Perfumaria	79.02	\N
-36	Kaiak Intense 51ml	Natura	65.20	Perfumaria	94.54	\N
-37	Impression Matte 52ml	Eudora	75.90	Perfumaria	110.06	\N
-38	Far Away Glow 53ml	Avon	86.60	Perfumaria	125.57	\N
-39	Malbec Repair 54ml	O Boticário	97.30	Perfumaria	141.08	\N
-40	Floratta Fresh 55ml	O Boticário	91.00	Perfumaria	131.95	\N
-41	Kaiak Soft 56ml	Natura	101.70	Perfumaria	147.47	\N
-42	Impression Expert 57ml	Eudora	112.40	Perfumaria	162.98	\N
-43	Far Away Pro 58ml	Avon	123.10	Perfumaria	178.49	\N
-44	Malbec Classic 59ml	O Boticário	133.80	Perfumaria	194.01	\N
-45	Floratta Premium 60ml	O Boticário	18.00	Perfumaria	26.10	\N
-46	Kaiak Intense 61ml	Natura	28.70	Perfumaria	41.61	\N
-47	Impression Matte 62ml	Eudora	39.40	Perfumaria	57.13	\N
-48	Far Away Glow 63ml	Avon	50.10	Perfumaria	72.64	\N
-49	Malbec Repair 64ml	O Boticário	60.80	Perfumaria	88.16	\N
-50	Floratta Fresh 65ml	O Boticário	54.50	Perfumaria	79.02	\N
-51	Kaiak Soft 66ml	Natura	65.20	Perfumaria	94.54	\N
-52	Reparação Total Premium 50ml	Elseve	69.10	Cabelos	100.19	\N
-53	Pro-V Intense 51ml	Pantene	79.80	Cabelos	115.71	\N
-54	Ceramidas Matte 52ml	Seda	90.50	Cabelos	131.22	\N
-55	Meu Liso Glow 53ml	Salon Line	101.20	Cabelos	146.74	\N
-56	Morte Súbita Repair 54ml	Lola Cosmetics	111.90	Cabelos	162.25	\N
-57	Reparação Total Fresh 55ml	Elseve	105.60	Cabelos	153.12	\N
-58	Pro-V Soft 56ml	Pantene	116.30	Cabelos	168.63	\N
-59	Ceramidas Expert 57ml	Seda	127.00	Cabelos	184.15	\N
-60	Meu Liso Pro 58ml	Salon Line	28.20	Cabelos	40.89	\N
-61	Morte Súbita Classic 59ml	Lola Cosmetics	38.90	Cabelos	56.40	\N
-62	Reparação Total Premium 60ml	Elseve	32.60	Cabelos	47.27	\N
-63	Pro-V Intense 61ml	Pantene	43.30	Cabelos	62.78	\N
-64	Ceramidas Matte 62ml	Seda	54.00	Cabelos	78.30	\N
-65	Meu Liso Glow 63ml	Salon Line	64.70	Cabelos	93.81	\N
-66	Morte Súbita Repair 64ml	Lola Cosmetics	75.40	Cabelos	109.33	\N
-67	Reparação Total Fresh 65ml	Elseve	69.10	Cabelos	100.19	\N
-68	Pro-V Soft 66ml	Pantene	79.80	Cabelos	115.71	\N
-69	Esmalte Premium 50ml	Risqué	83.70	Unhas	121.36	\N
-70	Cremoso Intense 51ml	Colorama	94.40	Unhas	136.88	\N
-71	Gel Plus Matte 52ml	Impala	105.10	Unhas	152.39	\N
-72	Nude Glow 53ml	Dailus	115.80	Unhas	167.91	\N
-73	5Free Repair 54ml	Vult	126.50	Unhas	183.42	\N
-74	Esmalte Fresh 55ml	Risqué	120.20	Unhas	174.29	\N
-75	Cremoso Soft 56ml	Colorama	21.40	Unhas	31.03	\N
-76	Gel Plus Expert 57ml	Impala	32.10	Unhas	46.55	\N
-77	Nude Pro 58ml	Dailus	42.80	Unhas	62.06	\N
-78	5Free Classic 59ml	Vult	53.50	Unhas	77.58	\N
-79	Esmalte Premium 60ml	Risqué	47.20	Unhas	68.44	\N
-80	Cremoso Intense 61ml	Colorama	57.90	Unhas	83.95	\N
-81	Gel Plus Matte 62ml	Impala	68.60	Unhas	99.47	\N
-82	Nude Glow 63ml	Dailus	79.30	Unhas	114.98	\N
-83	5Free Repair 64ml	Vult	90.00	Unhas	130.50	\N
-84	Esmalte Fresh 65ml	Risqué	83.70	Unhas	121.36	\N
-85	Cremoso Soft 66ml	Colorama	94.40	Unhas	136.88	\N
-86	Hidratante Premium 50ml	Dove	98.30	Corpo	142.53	\N
-87	Milk Intense 51ml	Nivea	109.00	Corpo	158.05	\N
-88	Body Care Matte 52ml	Johnsons	119.70	Corpo	173.56	\N
-89	Terrapeutics Glow 53ml	Granado	130.40	Corpo	189.08	\N
-90	Tododia Repair 54ml	Natura	31.60	Corpo	45.82	\N
-91	Hidratante Fresh 55ml	Dove	25.30	Corpo	36.69	\N
-92	Milk Soft 56ml	Nivea	36.00	Corpo	52.20	\N
-93	Body Care Expert 57ml	Johnsons	46.70	Corpo	67.72	\N
-94	Terrapeutics Pro 58ml	Granado	57.40	Corpo	83.23	\N
-95	Tododia Classic 59ml	Natura	68.10	Corpo	98.74	\N
-96	Hidratante Premium 60ml	Dove	61.80	Corpo	89.61	\N
-97	Milk Intense 61ml	Nivea	72.50	Corpo	105.12	\N
-98	Body Care Matte 62ml	Johnsons	83.20	Corpo	120.64	\N
-99	Terrapeutics Glow 63ml	Granado	93.90	Corpo	136.16	\N
-100	Tododia Repair 64ml	Natura	104.60	Corpo	151.67	\N
+COPY public.tb_produto (cod_produto, vch_nome, vch_marca, preco_custo, vch_categoria, preco_venda, imagem_url, num_venda, num_quantidade) FROM stdin;
+1	Chronos Premium 50ml	Natura	25.30	Skincare	36.69	\N	12.00	30
+2	Q10 Intense 51ml	Nivea	36.00	Skincare	52.20	\N	12.00	30
+3	Revitalift Matte 52ml	Loréal Paris	46.70	Skincare	67.72	\N	12.00	0
+4	Renew Glow 53ml	Avon	57.40	Skincare	83.23	\N	14.00	30
+5	Pink Repair 54ml	Granado	68.10	Skincare	98.74	\N	14.00	30
+6	Chronos Fresh 55ml	Natura	61.80	Skincare	89.61	\N	14.00	55
+7	Q10 Soft 56ml	Nivea	72.50	Skincare	105.12	\N	15.00	30
+8	Revitalift Expert 57ml	Loréal Paris	83.20	Skincare	120.64	\N	16.00	0
+9	Renew Pro 58ml	Avon	93.90	Skincare	136.16	\N	16.00	55
+10	Pink Classic 59ml	Granado	104.60	Skincare	151.67	\N	17.00	30
+11	Chronos Premium 60ml	Natura	98.30	Skincare	142.53	\N	17.00	30
+12	Q10 Intense 61ml	Nivea	109.00	Skincare	158.05	\N	18.00	55
+13	Revitalift Matte 62ml	Loréal Paris	119.70	Skincare	173.56	\N	19.00	0
+14	Renew Glow 63ml	Avon	130.40	Skincare	189.08	\N	19.00	30
+15	Pink Repair 64ml	Granado	31.60	Skincare	45.82	\N	19.00	55
+16	Chronos Fresh 65ml	Natura	25.30	Skincare	36.69	\N	21.00	30
+17	Q10 Soft 66ml	Nivea	36.00	Skincare	52.20	\N	21.00	30
+18	Glam Premium 50ml	Eudora	39.90	Maquiagem	57.85	\N	21.00	75
+19	Base Intense 51ml	Vult	50.60	Maquiagem	73.37	\N	22.00	40
+20	Ultra Matte 52ml	Dailus	61.30	Maquiagem	88.88	\N	23.00	40
+21	Fit Me Glow 53ml	Maybelline	72.00	Maquiagem	104.40	\N	23.00	75
+22	Feels Repair 54ml	Ruby Rose	82.70	Maquiagem	119.92	\N	24.00	40
+23	Glam Fresh 55ml	Eudora	76.40	Maquiagem	110.78	\N	24.00	40
+24	Base Soft 56ml	Vult	87.10	Maquiagem	126.29	\N	25.00	75
+25	Ultra Expert 57ml	Dailus	97.80	Maquiagem	141.81	\N	26.00	40
+26	Fit Me Pro 58ml	Maybelline	108.50	Maquiagem	157.32	\N	26.00	40
+27	Feels Classic 59ml	Ruby Rose	119.20	Maquiagem	172.84	\N	26.00	75
+28	Glam Premium 60ml	Eudora	112.90	Maquiagem	163.71	\N	28.00	40
+29	Base Intense 61ml	Vult	123.60	Maquiagem	179.22	\N	28.00	40
+30	Ultra Matte 62ml	Dailus	24.80	Maquiagem	35.96	\N	11.00	75
+31	Fit Me Glow 63ml	Maybelline	35.50	Maquiagem	51.48	\N	12.00	40
+32	Feels Repair 64ml	Ruby Rose	46.20	Maquiagem	66.99	\N	12.00	40
+33	Glam Fresh 65ml	Eudora	39.90	Maquiagem	57.85	\N	12.00	75
+34	Base Soft 66ml	Vult	50.60	Maquiagem	73.37	\N	14.00	40
+35	Floratta Premium 50ml	O Boticário	54.50	Perfumaria	79.02	\N	14.00	12
+36	Kaiak Intense 51ml	Natura	65.20	Perfumaria	94.54	\N	14.00	29
+37	Impression Matte 52ml	Eudora	75.90	Perfumaria	110.06	\N	15.00	12
+38	Far Away Glow 53ml	Avon	86.60	Perfumaria	125.57	\N	16.00	12
+39	Malbec Repair 54ml	O Boticário	97.30	Perfumaria	141.08	\N	16.00	29
+40	Floratta Fresh 55ml	O Boticário	91.00	Perfumaria	131.95	\N	17.00	12
+41	Kaiak Soft 56ml	Natura	101.70	Perfumaria	147.47	\N	17.00	12
+42	Impression Expert 57ml	Eudora	112.40	Perfumaria	162.98	\N	18.00	29
+43	Far Away Pro 58ml	Avon	123.10	Perfumaria	178.49	\N	19.00	12
+44	Malbec Classic 59ml	O Boticário	133.80	Perfumaria	194.01	\N	19.00	12
+45	Floratta Premium 60ml	O Boticário	18.00	Perfumaria	26.10	\N	19.00	29
+46	Kaiak Intense 61ml	Natura	28.70	Perfumaria	41.61	\N	21.00	12
+47	Impression Matte 62ml	Eudora	39.40	Perfumaria	57.13	\N	21.00	12
+48	Far Away Glow 63ml	Avon	50.10	Perfumaria	72.64	\N	21.00	29
+49	Malbec Repair 64ml	O Boticário	60.80	Perfumaria	88.16	\N	22.00	12
+50	Floratta Fresh 65ml	O Boticário	54.50	Perfumaria	79.02	\N	23.00	12
+51	Kaiak Soft 66ml	Natura	65.20	Perfumaria	94.54	\N	23.00	29
+52	Reparação Total Premium 50ml	Elseve	69.10	Cabelos	100.19	\N	24.00	60
+53	Pro-V Intense 51ml	Pantene	79.80	Cabelos	115.71	\N	24.00	60
+54	Ceramidas Matte 52ml	Seda	90.50	Cabelos	131.22	\N	25.00	110
+55	Meu Liso Glow 53ml	Salon Line	101.20	Cabelos	146.74	\N	26.00	60
+56	Morte Súbita Repair 54ml	Lola Cosmetics	111.90	Cabelos	162.25	\N	26.00	60
+57	Reparação Total Fresh 55ml	Elseve	105.60	Cabelos	153.12	\N	26.00	110
+58	Pro-V Soft 56ml	Pantene	116.30	Cabelos	168.63	\N	28.00	60
+59	Ceramidas Expert 57ml	Seda	127.00	Cabelos	184.15	\N	28.00	60
+60	Meu Liso Pro 58ml	Salon Line	28.20	Cabelos	40.89	\N	11.00	110
+61	Morte Súbita Classic 59ml	Lola Cosmetics	38.90	Cabelos	56.40	\N	12.00	60
+62	Reparação Total Premium 60ml	Elseve	32.60	Cabelos	47.27	\N	12.00	60
+63	Pro-V Intense 61ml	Pantene	43.30	Cabelos	62.78	\N	12.00	110
+64	Ceramidas Matte 62ml	Seda	54.00	Cabelos	78.30	\N	14.00	60
+65	Meu Liso Glow 63ml	Salon Line	64.70	Cabelos	93.81	\N	14.00	60
+66	Morte Súbita Repair 64ml	Lola Cosmetics	75.40	Cabelos	109.33	\N	14.00	110
+67	Reparação Total Fresh 65ml	Elseve	69.10	Cabelos	100.19	\N	15.00	60
+68	Pro-V Soft 66ml	Pantene	79.80	Cabelos	115.71	\N	16.00	60
+69	Esmalte Premium 50ml	Risqué	83.70	Unhas	121.36	\N	16.00	150
+70	Cremoso Intense 51ml	Colorama	94.40	Unhas	136.88	\N	17.00	80
+71	Gel Plus Matte 52ml	Impala	105.10	Unhas	152.39	\N	17.00	80
+72	Nude Glow 53ml	Dailus	115.80	Unhas	167.91	\N	18.00	150
+73	5Free Repair 54ml	Vult	126.50	Unhas	183.42	\N	19.00	80
+74	Esmalte Fresh 55ml	Risqué	120.20	Unhas	174.29	\N	19.00	80
+75	Cremoso Soft 56ml	Colorama	21.40	Unhas	31.03	\N	19.00	150
+76	Gel Plus Expert 57ml	Impala	32.10	Unhas	46.55	\N	21.00	80
+77	Nude Pro 58ml	Dailus	42.80	Unhas	62.06	\N	21.00	80
+78	5Free Classic 59ml	Vult	53.50	Unhas	77.58	\N	21.00	150
+79	Esmalte Premium 60ml	Risqué	47.20	Unhas	68.44	\N	22.00	80
+80	Cremoso Intense 61ml	Colorama	57.90	Unhas	83.95	\N	23.00	80
+81	Gel Plus Matte 62ml	Impala	68.60	Unhas	99.47	\N	23.00	150
+82	Nude Glow 63ml	Dailus	79.30	Unhas	114.98	\N	24.00	80
+83	5Free Repair 64ml	Vult	90.00	Unhas	130.50	\N	24.00	80
+84	Esmalte Fresh 65ml	Risqué	83.70	Unhas	121.36	\N	25.00	150
+85	Cremoso Soft 66ml	Colorama	94.40	Unhas	136.88	\N	26.00	80
+86	Hidratante Premium 50ml	Dove	98.30	Corpo	142.53	\N	26.00	50
+87	Milk Intense 51ml	Nivea	109.00	Corpo	158.05	\N	26.00	95
+88	Body Care Matte 52ml	Johnsons	119.70	Corpo	173.56	\N	28.00	0
+89	Terrapeutics Glow 53ml	Granado	130.40	Corpo	189.08	\N	28.00	50
+90	Tododia Repair 54ml	Natura	31.60	Corpo	45.82	\N	11.00	95
+91	Hidratante Fresh 55ml	Dove	25.30	Corpo	36.69	\N	12.00	50
+92	Milk Soft 56ml	Nivea	36.00	Corpo	52.20	\N	12.00	50
+93	Body Care Expert 57ml	Johnsons	46.70	Corpo	67.72	\N	12.00	0
+94	Terrapeutics Pro 58ml	Granado	57.40	Corpo	83.23	\N	14.00	50
+95	Tododia Classic 59ml	Natura	68.10	Corpo	98.74	\N	14.00	50
+96	Hidratante Premium 60ml	Dove	61.80	Corpo	89.61	\N	14.00	95
+97	Milk Intense 61ml	Nivea	72.50	Corpo	105.12	\N	15.00	50
+98	Body Care Matte 62ml	Johnsons	83.20	Corpo	120.64	\N	16.00	0
+99	Terrapeutics Glow 63ml	Granado	93.90	Corpo	136.16	\N	16.00	95
+100	Tododia Repair 64ml	Natura	104.60	Corpo	151.67	\N	17.00	50
 \.
 
 
 --
--- Data for Name: tb_usuario; Type: TABLE DATA; Schema: public; Owner: postgres
+-- TOC entry 3524 (class 0 OID 16416)
+-- Dependencies: 225
+-- Data for Name: tb_usuario; Type: TABLE DATA; Schema: public; Owner: pedro
 --
 
 COPY public.tb_usuario (cod_usuario, vch_email, vch_senha) FROM stdin;
@@ -814,35 +846,44 @@ COPY public.tb_usuario (cod_usuario, vch_email, vch_senha) FROM stdin;
 
 
 --
--- Name: tb_lote_cod_lote_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+-- TOC entry 3535 (class 0 OID 0)
+-- Dependencies: 220
+-- Name: tb_lote_cod_lote_seq; Type: SEQUENCE SET; Schema: public; Owner: pedro
 --
 
 SELECT pg_catalog.setval('public.tb_lote_cod_lote_seq', 125, true);
 
 
 --
--- Name: tb_movimentacao_cod_mov_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+-- TOC entry 3536 (class 0 OID 0)
+-- Dependencies: 222
+-- Name: tb_movimentacao_cod_mov_seq; Type: SEQUENCE SET; Schema: public; Owner: pedro
 --
 
 SELECT pg_catalog.setval('public.tb_movimentacao_cod_mov_seq', 350, true);
 
 
 --
--- Name: tb_produto_cod_produto_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+-- TOC entry 3537 (class 0 OID 0)
+-- Dependencies: 224
+-- Name: tb_produto_cod_produto_seq; Type: SEQUENCE SET; Schema: public; Owner: pedro
 --
 
 SELECT pg_catalog.setval('public.tb_produto_cod_produto_seq', 100, true);
 
 
 --
--- Name: tb_usuario_cod_usuario_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+-- TOC entry 3538 (class 0 OID 0)
+-- Dependencies: 226
+-- Name: tb_usuario_cod_usuario_seq; Type: SEQUENCE SET; Schema: public; Owner: pedro
 --
 
 SELECT pg_catalog.setval('public.tb_usuario_cod_usuario_seq', 2, true);
 
 
 --
--- Name: tb_lote tb_lote_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+-- TOC entry 3356 (class 2606 OID 16428)
+-- Name: tb_lote tb_lote_pkey; Type: CONSTRAINT; Schema: public; Owner: pedro
 --
 
 ALTER TABLE ONLY public.tb_lote
@@ -850,7 +891,8 @@ ALTER TABLE ONLY public.tb_lote
 
 
 --
--- Name: tb_movimentacao tb_movimentacao_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+-- TOC entry 3358 (class 2606 OID 16430)
+-- Name: tb_movimentacao tb_movimentacao_pkey; Type: CONSTRAINT; Schema: public; Owner: pedro
 --
 
 ALTER TABLE ONLY public.tb_movimentacao
@@ -858,7 +900,8 @@ ALTER TABLE ONLY public.tb_movimentacao
 
 
 --
--- Name: tb_produto tb_produto_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+-- TOC entry 3364 (class 2606 OID 16432)
+-- Name: tb_produto tb_produto_pkey; Type: CONSTRAINT; Schema: public; Owner: pedro
 --
 
 ALTER TABLE ONLY public.tb_produto
@@ -866,7 +909,8 @@ ALTER TABLE ONLY public.tb_produto
 
 
 --
--- Name: tb_usuario tb_usuario_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+-- TOC entry 3366 (class 2606 OID 16434)
+-- Name: tb_usuario tb_usuario_pkey; Type: CONSTRAINT; Schema: public; Owner: pedro
 --
 
 ALTER TABLE ONLY public.tb_usuario
@@ -874,7 +918,8 @@ ALTER TABLE ONLY public.tb_usuario
 
 
 --
--- Name: tb_usuario tb_usuario_vch_email_key; Type: CONSTRAINT; Schema: public; Owner: postgres
+-- TOC entry 3368 (class 2606 OID 16436)
+-- Name: tb_usuario tb_usuario_vch_email_key; Type: CONSTRAINT; Schema: public; Owner: pedro
 --
 
 ALTER TABLE ONLY public.tb_usuario
@@ -882,42 +927,48 @@ ALTER TABLE ONLY public.tb_usuario
 
 
 --
--- Name: idx_lote_validade; Type: INDEX; Schema: public; Owner: postgres
+-- TOC entry 3354 (class 1259 OID 16437)
+-- Name: idx_lote_validade; Type: INDEX; Schema: public; Owner: pedro
 --
 
 CREATE INDEX idx_lote_validade ON public.tb_lote USING btree (dat_validade);
 
 
 --
--- Name: idx_produto_categoria; Type: INDEX; Schema: public; Owner: postgres
+-- TOC entry 3359 (class 1259 OID 16438)
+-- Name: idx_produto_categoria; Type: INDEX; Schema: public; Owner: pedro
 --
 
 CREATE INDEX idx_produto_categoria ON public.tb_produto USING btree (vch_categoria);
 
 
 --
--- Name: idx_produto_marca; Type: INDEX; Schema: public; Owner: postgres
+-- TOC entry 3360 (class 1259 OID 16439)
+-- Name: idx_produto_marca; Type: INDEX; Schema: public; Owner: pedro
 --
 
 CREATE INDEX idx_produto_marca ON public.tb_produto USING btree (vch_marca);
 
 
 --
--- Name: idx_produto_preco_custo; Type: INDEX; Schema: public; Owner: postgres
+-- TOC entry 3361 (class 1259 OID 16440)
+-- Name: idx_produto_preco_custo; Type: INDEX; Schema: public; Owner: pedro
 --
 
 CREATE INDEX idx_produto_preco_custo ON public.tb_produto USING btree (preco_custo);
 
 
 --
--- Name: idx_produto_preco_venda; Type: INDEX; Schema: public; Owner: postgres
+-- TOC entry 3362 (class 1259 OID 16441)
+-- Name: idx_produto_preco_venda; Type: INDEX; Schema: public; Owner: pedro
 --
 
 CREATE INDEX idx_produto_preco_venda ON public.tb_produto USING btree (preco_venda);
 
 
 --
--- Name: tb_lote tb_lote_cod_produto_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+-- TOC entry 3369 (class 2606 OID 16442)
+-- Name: tb_lote tb_lote_cod_produto_fkey; Type: FK CONSTRAINT; Schema: public; Owner: pedro
 --
 
 ALTER TABLE ONLY public.tb_lote
@@ -925,16 +976,19 @@ ALTER TABLE ONLY public.tb_lote
 
 
 --
--- Name: tb_movimentacao tb_movimentacao_cod_produto_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+-- TOC entry 3370 (class 2606 OID 16447)
+-- Name: tb_movimentacao tb_movimentacao_cod_produto_fkey; Type: FK CONSTRAINT; Schema: public; Owner: pedro
 --
 
 ALTER TABLE ONLY public.tb_movimentacao
     ADD CONSTRAINT tb_movimentacao_cod_produto_fkey FOREIGN KEY (cod_produto) REFERENCES public.tb_produto(cod_produto);
 
 
+-- Completed on 2026-06-28 15:59:43 -03
+
 --
 -- PostgreSQL database dump complete
 --
 
-\unrestrict 8v8khu7uGx1ED1GoyejQD7UOvuX75z2abuo4GJ60V5XhGluE0dfDgwYrV7H7ORG
+\unrestrict QofAcJZR1gVdyNjPQUoZIqaSuB4pdLyt6CyEZyMHZBsdhyjSnLVoEwMg6HvcTfT
 
