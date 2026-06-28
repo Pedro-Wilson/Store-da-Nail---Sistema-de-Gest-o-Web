@@ -1,5 +1,5 @@
 """
-Dashboard de Estoque - Loja de Produtos de Unha
+Dashboard de Estoque - Store da nail
 =================================================
 Dashboard interativo construído com Streamlit + Plotly, conectado a um
 banco de dados PostgreSQL com o schema:
@@ -13,6 +13,10 @@ Como executar:
     2. Configure as credenciais do banco (variáveis de ambiente OU
        diretamente na barra lateral ao abrir o app).
     3. streamlit run app.py
+    
+    - para facilitar também pode usar o make :
+    1. make install 
+    2. make run
 
 O app também funciona em "modo demonstração" com SQLite caso você não
 informe uma conexão Postgres - útil para testar o layout antes de
@@ -181,7 +185,7 @@ else:
     st.sidebar.info("Usando dados de demonstração.")
 
 if engine is None:
-    st.title("Dashboard cde Estoque")
+    st.title("Dashboard de Estoque -  Conecte o banco de dados")
     st.info(
         "Informe as credenciais do PostgreSQL na barra lateral e clique em "
         "**Conectar**, ou selecione o **modo demonstração** para ver o "
@@ -237,7 +241,7 @@ if st.sidebar.button("Atualizar dados agora"):
 # ------------------------------------------------------------------
 # Cabeçalho + KPIs
 # ------------------------------------------------------------------
-st.title("Dashboard de Estoque - Loja de Produtos de Unha")
+st.title("Dashboard de Estoque - Store da Nail")
 st.caption(f"Última atualização: {datetime.now().strftime('%d/%m/%Y %H:%M:%S')}")
 
 estoque_por_produto = (
