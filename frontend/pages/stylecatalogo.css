@@ -38,6 +38,27 @@ body {
   color: rgba(0, 0, 0, 0.6);
 }
 
+button {
+  padding: 18px 36px;
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  background-color: #9b78dc;
+  border: none;
+  margin-top: 5px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+        }
+button:hover {
+  background-color: #005fa3;
+    transform: scale(1.05);
+        }
+
+button:active {
+  transform: scale(0.98);
+        }
+
 .topbar input:focus { 
   outline: none; 
   border-color: #5625B2; 

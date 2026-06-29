@@ -1,4 +1,4 @@
-const BASE_URL = 'https://curly-space-broccoli-p64wp6p6rvqfgr-3000.app.github.dev';
+const BASE_URL = 'https://urban-doodle-rxq6pxpxg4q3xrvx-3000.app.github.dev';
 
 function getToken() { return localStorage.getItem('token') || ''; }
 
