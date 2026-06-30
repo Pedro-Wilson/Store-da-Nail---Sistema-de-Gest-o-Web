@@ -1,4 +1,4 @@
-const BASE_URL = 'https://urban-doodle-rxq6pxpxg4q3xrvx-3000.app.github.dev';
+const BASE_URL = 'https://congenial-capybara-9xr5jxjx79vh7pwq-3000.app.github.dev';
 
 function getToken() { return localStorage.getItem('token') || ''; }
 
